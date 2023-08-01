@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<thead>
+    <meta charset="UTF-8">
+</thead>
+<style>
+    .error{
+        color:red;
+    }
+    .message{
+        color: aqua;
+    }
+</style>
+<tbody>
+<a th:href="@{index}">Strona główna</a> | <a th:href="@{add}">nowy użytkownik</a>
+<!--    <div class="message" th:if="${#fields.hasErrors('message')}"></div>-->
+<!--    <div class="error" th:if="${#fields.hasErrors('error')}"></div>-->
+    <table>
+        <tr>
+            <th>ID|</th>
+            <th>Name|</th>
+            <th>Surname|</th>
+            <th>Email|</th>
+            <th>Password|</th>
+            <th>User Type</th>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td th:text = "${user.id}"/>
+            <td th:text = "${user.name}"/>
+            <td th:text = "${user.surname}"/>
+            <td th:text = "${user.email}"/>
+            <td th:text = "${user.password}"/>
+            <td th:text = "${user.userType}"/>
+            <td><a th:href="@{update/{id}(id=${user.id})}">Edytuj</a></td>
+        </tr>
+    </table>
+</tbody>

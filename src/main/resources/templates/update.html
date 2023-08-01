@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+  <body>
+  <a href="user/getAllUsers">See all user</a><br>
+  <a href="user/create_user">create user</a><br>
+  <a href="user/index">Strona główna</a>
+  <h2>Edycja Użytkownika</h2>
+    <form th:action="@{/user/update/{id}(id=${user.id})}" method="post">
+      <table>
+        <tbody>
+        <tr>
+          <td><strong>ID:</strong></td>
+          <td><input type="hidden" name="id">
+            <span th:text = "${user.id}"></span></td>
+        </tr>
+      
+        <tr>
+          <td><strong>Name:</strong></td>
+          <td><span th:text="${user.name}"></span></td>
+      
+        </tr>
+        <tr>
+          <td><strong>Surname:</strong></td>
+          <td><span th:text="${user.surname}"></span></td>
+        </tr>
+        <tr>
+          <td><strong>email:</strong></td>
+          <td><span th:text="${user.email}"></span></td>
+        </tr>
+        </tbody>
+        <input type="submit" value="Zaktualizuj">
+      </table>
+    </form>
+  </body>
+</html>

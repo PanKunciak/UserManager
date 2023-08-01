@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/loginStyle.css}" />
+</head>
+<body>
+<nav th:include="navBar"></nav>
+    <!-- <h1>Zaloguj się!</h1> -->
+    <form method="post" th:action="@{login}" th:object="${user}">
+        <div class="inputBox">
+            <input type="email" required th:field="*{email}">
+            <span>Email</span>
+        </div>
+        <div class="inputBox">
+            <input type="password" required id="password" th:field="*{password}">
+            <span>Password</span>
+            <div id="toggle" onclick="showHide();"></div>
+        </div>
+        <input class="loginButton" type="submit" value="Login">
+        <p th:if="${error}" class="error" th:text="${error}"></p>
+    </form>
+    <script>
+        let password=document.getElementById('password');
+        let togglePAssword = document.getElementById('toggle');
+        function showHide(){
+            if(password.type==='password'){
+                password.setAttribute('type', 'text');
+                togglePAssword.classList.add('hide');
+            }
+            else{
+                password.setAttribute('type','password')
+                togglePAssword.classList.remove('hide');
+            }
+        }
+    </script>
+</body>
+</html>

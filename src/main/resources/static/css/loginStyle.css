@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1d2b3a;
+}
+.inputBox{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position:relative;
+    width: 300px;
+}
+.inputBox input{
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background:transparent;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+    font-size:1em 
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 15px 20px;
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.5s;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+}
+.inputBox input:focus ~ span,
+.inputBox input:valid ~ span{
+    color: #1d2b3a;
+    font-size: 0.75em;
+    transform: translateX(20px) translateY(-7px);
+    padding: 0 5px;
+    background: #00dfc4;
+    border-radius: 2px;
+}
+#toggle{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right:20px;
+    background:url(/icons/open_eye.png) ;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    cursor: pointer;
+}
+#toggle.hide{
+background:url(/icons/close_eye.png) ;
+background-size: cover;
+}
+.error{
+    font-size: 1em;
+    color:red;
+}
+.loginButton {
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #00dfc4;
+    border: none;
+    outline: none;
+    color: #1d2b3a;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+    background-color: #00b4a0;
+}
+
+.loginButton:active {
+    background-color: #009e89;
+}
