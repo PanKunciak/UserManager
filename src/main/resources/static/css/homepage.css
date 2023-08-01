@@ -5,8 +5,18 @@
     box-sizing: border-box;
 }
 body{
+    width: 100%;
     min-height: 100vh;
-    background:linear-gradient(#2b1055,#7597de) ;
+    background:#2b1055 ;
+}
+#galaxy{
+    width:100%;
+    height: auto;
+}
+#earth{
+    margin-top: -350px;
+    width: 100%;
+    height: auto;
 }
 
 
