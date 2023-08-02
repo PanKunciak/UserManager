@@ -11,7 +11,25 @@
         <section>
             <img id="galaxy"  th:src="@{/images/space-galaxy-astronomy-star-backgrounds-nebula-night-abstract-generated-by-ai.jpg}">
             <img id="earth" th:src="@{/images/earth-from-space-with-planet-sun-background.png}">
-        </section>
+            <div id="night"></div>
+            <footer>statek z socjalkami i kontaktem</footer>
 
+            <script>
+                const night = document.getElementById('night');
+                let number_of_star=Math.floor((Math.random(10)*10)+10);
+                console.log(number_of_star);
+                for (let i = 0; i < number_of_star; i++) {
+                    const star = document.createElement("div");
+                    star.className="star"
+                    const randomX = Math.floor(Math.random() * night.offsetWidth);
+                    const randomY = Math.floor(Math.random() * night.offsetHeight);
+                    star.style.left = randomX-300 + "px";
+                    star.style.top = randomY-300 + "px";
+                    star.style.animation = "fall_star "+ ((Math.random()*10000)+1000)+"ms ease-in-out infinite";
+                    star.style.zIndex="-10";
+                    night.insertBefore(star,null);
+                }
+            </script>
+        </section>
     </body>
 </html>
